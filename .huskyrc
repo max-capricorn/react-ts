@@ -11,6 +11,10 @@
       "eslint",
       "prettier --parser=typescript --write"
     ],
+    "*.tsx": [
+      "eslint",
+      "prettier --parser=typescriptreact --write"
+    ],
     "*.html": [
       "prettier --write"
     ]
