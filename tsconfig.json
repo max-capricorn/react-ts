@@ -10,9 +10,16 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "utils/*": ["./utils/*"]// 此处映射是相对于"baseUrl"
+    },
 //    "noEmit": true,
     "jsx": "react",
     // "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["src", "webpack"]
+  "rules": {
+    "no-implicit-dependencies": ["optional", ["src","utils"]]
+  } ,
+  "include": ["src", "webpack", "style.css.d.ts", "global.d.ts"]
 }

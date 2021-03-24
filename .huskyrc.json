@@ -1,0 +1,8 @@
+{
+  "pre-commit": "lint-staged",
+  "lint-staged": [
+    "prettier --write",
+    "eslint",
+    "git add"
+  ]
+}

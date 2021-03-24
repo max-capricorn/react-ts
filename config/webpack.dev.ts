@@ -6,3 +6,11 @@
  * @Description:
  * @FilePath: /react-cli/config/webpack.dev.js
  */
+import config from './webpack.common'
+import merge from 'webpack-merge'
+
+export default merge(config, {
+  // devServer: {
+
+  // }
+})
