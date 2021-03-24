@@ -75,7 +75,7 @@
     ],
     "*.tsx": [
       "eslint",
-      "prettier --parser=typescriptreact --write"
+      "prettier --parser=typescript --write"
     ],
     "*.html": [
       "prettier --write"
