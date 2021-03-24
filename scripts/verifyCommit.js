@@ -1,13 +1,14 @@
 /*
  * @Author: sheng.wang
  * @Date: 2021-03-24 16:27:25
- * @LastEditTime: 2021-03-24 16:27:25
+ * @LastEditTime: 2021-03-24 16:33:28
  * @LastEditors: sheng.wang
  * @Description:
  * @FilePath: /react-cli/scripts/verifyCommit.js
  */
 const chalk = require('chalk')
 const msgPath = process.env.GIT_PARAMS
+console.log('msgPath', msgPath)
 const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
 
 const releaseRE = /^v\d/
