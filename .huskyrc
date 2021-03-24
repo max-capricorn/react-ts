@@ -1,10 +1,18 @@
 {
-  "hooks": {
-    "pre-commit": "lint-staged"
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node scripts/verifyCommit.js"
   },
-  "lint-staged": [
-    "prettier --write",
-    "eslint",
-    "git add"
-  ]
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts": [
+      "eslint",
+      "prettier --parser=typescript --write"
+    ],
+    "*.html": [
+      "prettier --write"
+    ]
+  }
 }
