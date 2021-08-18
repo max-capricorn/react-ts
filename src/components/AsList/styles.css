@@ -1,0 +1,8 @@
+.showElement{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    margin-bottom: 8px;
+    border-radius: 4px;
+}

@@ -48,6 +48,7 @@ export default <webpack.Configuration>{
         use: 'ts-loader',
         exclude: /node_modules/
       },
+
       {
         test: /\.less$/,
         exclude: /\.module\.less$/,
@@ -58,12 +59,40 @@ export default <webpack.Configuration>{
             options: {
               importLoaders: 1,
               modules: {
-                compileType: 'icss'
-              }
+                compileType: 'icss',
+              },
             }
           },
-          { loader: 'less-loader' }
+          {
+            loader: '@teamsupercell/typings-for-css-modules-loader'
+          },
+          {
+            loader: 'less-loader'
+          }
         ]
+      },
+      {
+        test: /\.module\.less$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: {
+                mode: "local",
+              },
+            },
+          },
+          {
+            loader: '@teamsupercell/typings-for-css-modules-loader'
+          },
+          {
+            loader: 'less-loader'
+          }
+        ],
       },
       {
         test: /\.css$/,
@@ -75,11 +104,29 @@ export default <webpack.Configuration>{
             options: {
               importLoaders: 1,
               modules: {
-                compileType: 'icss'
-              }
+                compileType: 'icss',
+              },
+              esModule: true,
             }
           },
         ]
+      },
+      {
+        test: /\.module\.css$/,
+        use: [
+          {
+            loader: "style-loader",
+          },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: {
+                mode: "local",
+              },
+            },
+          }
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|ico)$/,

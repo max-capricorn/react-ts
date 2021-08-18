@@ -8,10 +8,13 @@
  */
 import React, { FC } from 'react';
 import ReactDom from 'react-dom';
-import styles from './index.less';
+import AsList from './components/AsList';
+
 const App: FC = () => {
   return (
-    <div className={styles.add}><img src="./assets/WechatIMG17.jpeg" alt="" /></div>
+    <>
+      <AsList></AsList>
+    </>
   )
 }
 
