@@ -1,9 +1,9 @@
-import React from "react";
+import React, { FC } from "react";
 import "./index.css";
 
-export default () => {
+const Product: FC = () => {
   return (
-    <div className="product">
+    <div className="product" >
       <div>
         <img
           className="product__image"
@@ -27,6 +27,8 @@ export default () => {
           <div className="product__info__bottom__count">x2</div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
+
+export default Product

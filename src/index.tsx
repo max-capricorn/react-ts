@@ -9,11 +9,16 @@
 import React, { FC } from 'react';
 import ReactDom from 'react-dom';
 import AsList from './components/AsList';
-
+import styles from './app.module.less'
+import demos from './demos/input'
 const App: FC = () => {
   return (
     <>
-      <AsList></AsList>
+      <div className={styles['app-container']}>
+        {demos()}
+      </div>
+      {/* <AsList></AsList>
+      <div>aaa</div> */}
     </>
   )
 }
