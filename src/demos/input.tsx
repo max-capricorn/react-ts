@@ -1,7 +1,9 @@
 import React, { ChangeEvent } from "react"
 import { useState } from "react"
 
-const fancyComponent = (value: any, handleChange: (arg0: any, arg1: string) => void, idx: number) => {
+type HandleChange = (idx: number, value: string) => void
+
+const fancyComponent = (value: string, handleChange: HandleChange, idx: number) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault()
     handleChange(idx, e.target.value)
